@@ -1,13 +1,17 @@
 class Adapter {
-  static getShows (){
-    fetch("http://api.tvmaze.com/shows")
-    .then(res => res.json())
+  static async getShows() {
+    const response = await fetch("http://api.tvmaze.com/shows");
+    const data = await response.json();
+    return data;
   }
 
-  // static getShowEpisodes (showID){
-  //   return fetch(`http://api.tvmaze.com/shows/${showID}/episodes`)
-  //   .then(res => res.json)
-  // }
+  static async getShowEpisodes(showID) {
+    const response = await fetch(
+      `http://api.tvmaze.com/shows/${showID}/episodes`
+    );
+    const data = await response.json();
+    return data;
+  }
 }
 
-export default Adapter
+export default Adapter;
