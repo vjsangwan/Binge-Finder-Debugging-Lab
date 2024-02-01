@@ -7,8 +7,8 @@ class SelectedShowContainer extends Component {
   };
 
   mapSeasons = (props) => {
-    if (!!this.props.episodes) {
-      let seasons = this.props.episodes.map((e) => e.season).unique();
+    if (!!this.props.allEpisodes) {
+      let seasons = this.props.allEpisodes.map((e) => e.season).unique();
 
       return seasons.map((s) => {
         return (
