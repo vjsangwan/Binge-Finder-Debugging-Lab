@@ -35,9 +35,11 @@ class App extends Component {
   };
 
   handleFilter = (e) => {
-    e.target.value === "No Filter"
-      ? this.setState({ filterRating: "" })
-      : this.setState({ filterRating: e.target.value });
+    if (e.target.value === "No Filter") {
+      this.setState({ filterByRating: "" });
+    } else {
+      this.setState({ filterByRating: e.target.value });
+    }
   };
 
   selectShow = (show) => {
